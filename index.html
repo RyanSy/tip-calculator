@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Tip Calculator</h1>
+
+    <div>
+      <label for="bill">Total bill:</label>
+      $ <input id="bill" type="number" min="0" step=".01">
+    </div>
+
+    <div>
+      <label for="percentage">Tip percentage:</label>
+      <input id="percentage" type="number" min="1" max="100">%
+    </div>
+
+    <div>
+      <label for="split">Split the tip?</label>
+      <input id="splitYes" type="radio" name="toggleSplit" onclick="toggleSplit()" value="yes">Yes
+      <input id="splitNo" type="radio" name="toggleSplit" onclick="toggleSplit()" value="no" checked>No
+      <div id="splitContainer" class="display-none">
+        <label for="split">How many people?</label>
+        <input id="split" type="number" min="1" value="1">
+      </div>
+    </div>
+
+    <button type="button" onclick="calculateTip()">Calculate Tip</button>
+
+    <div id="tipContainer">
+      Tip total: <span id="tip">$0.00</span>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

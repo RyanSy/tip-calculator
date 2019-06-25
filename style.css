@@ -1,0 +1,12 @@
+label, input {
+  margin-bottom: 20px;
+}
+label {
+  padding-right: 10px;
+}
+.display-none {
+  display: none;
+}
+#tipContainer {
+  margin-top: 20px;
+}
