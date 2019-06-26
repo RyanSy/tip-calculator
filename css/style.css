@@ -1,11 +1,13 @@
+.content {
+  max-width: 500px;
+  margin: auto;
+  font-size: 16px;
+}
 label, input {
   margin-bottom: 20px;
 }
 label {
   padding-right: 10px;
-}
-.display-none {
-  display: none;
 }
 #tipContainer {
   margin-top: 20px;
