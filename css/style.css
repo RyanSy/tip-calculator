@@ -1,6 +1,8 @@
 .content {
   max-width: 500px;
-  margin: auto;
+  margin: auto;padding: 25px;
+
+  font-family: sans-serif;
   font-size: 16px;
 }
 label, input {
@@ -8,7 +10,4 @@ label, input {
 }
 label {
   padding-right: 10px;
-}
-#tipContainer {
-  margin-top: 20px;
 }
