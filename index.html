@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>Tip Calculator</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
@@ -14,34 +14,25 @@
       <form action="javascript:calculateTip()">
         <div>
           <label for="bill">Bill amount:</label>
-          <input id="bill" type="text" size="12" inputmode="decimal" onblur="convertToCurrencyString()" oninvalid="this.setCustomValidity('Please enter a valid USD amount.')" oninput="this.setCustomValidity('')" placeholder="$0.00" required>
+          <input id="bill" type="text" size="13" inputmode="decimal" oninvalid="this.setCustomValidity('Please enter a valid USD amount.')" oninput="this.setCustomValidity('')" placeholder="0.00" required>
         </div>
 
         <div>
           <label for="percentage">Tip percentage:</label>
-          <input id="percentage" type="text" size="4" inputmode="numeric" onblur="convertToPercentString()" oninvalid="this.setCustomValidity('Please enter a number between 1 and 100.')" oninput="this.setCustomValidity('')" placeholder="0%" required>
-        </div>
-
-        <div>
-          <span>Split the tip?</span>
-          <input id="splitYes" type="radio" name="toggleSplit" value="yes">
-          <label for="splitYes">Yes</label>
-          <input id="splitNo" type="radio" name="toggleSplit" value="no" checked>
-          <label for="splitNo">No</label>
+          <input id="percentage" type="text" size="5" inputmode="decimal" oninvalid="this.setCustomValidity('Please enter a number between 1 and 100.')" oninput="this.setCustomValidity('')" placeholder="0" required>
         </div>
 
         <div>
           <label for="split">Number of people:</label>
-          <input id="split" type="number" inputmode="numeric" size="4" in min="1" max="999" value="1" disabled>
+          <input id="split" type="number" inputmode="decimal" size="4" min="1" placeholder="0" oninvalid="this.setCustomValidity('Please enter a valid number')" oninput="this.setCustomValidity('')" required>
         </div>
 
-        <div>
-          <input type="submit"value="Calculate">
-        </div>
+        <button class="button">Calculate Tip</button>
       </form>
 
-      <div id="tipContainer">
-        Tip amount: <span id="tip"></span>
+      <div id="tip-container">
+        <label for="tip">Tip amount:</label>
+        <p><span id="tip"></span><span id="tip-text"></span></p>
       </div>
     </div>
 
