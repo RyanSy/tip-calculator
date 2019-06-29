@@ -1,4 +1,1 @@
 # tip-calculator
-
-TODO:
-- styling

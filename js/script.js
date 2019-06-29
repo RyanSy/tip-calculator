@@ -2,16 +2,17 @@ const bill = document.getElementById('bill');
 const percentage = document.getElementById('percentage');
 const split = document.getElementById('split');
 const tip = document.getElementById('tip');
+const tipText = document.getElementById('tip-text');
 
-// convert bill and percentage to currency strings on blur
+/* convert bill and percentage to currency strings on blur */
 bill.onblur = toCurrencyString;
 percentage.onblur = toPercentageString;
 
-// convert bill and percentage to numbers on focus
+/* convert bill and percentage to numbers on focus */
 bill.onfocus = toCurrencyNumber;
 percentage.onfocus = toPercentageNumber;
 
-// delete tip value if bill, percentage or split are changed
+/* delete tip value if bill, percentage or split are changed */
 bill.addEventListener('change', updateTip);
 percentage.addEventListener('change', updateTip);
 split.addEventListener('change', updateTip);
@@ -56,15 +57,15 @@ function toPercentageNumber() {
 
 function updateTip() {
   tip.innerHTML = '';
+  tipText.innerHTML = '';
 }
 
-// main calculate tip function
+/* main calculate tip function */
 function calculateTip() {
   const billAmount = Number(bill.value.replace(/[^\d.]/g, ''));
   const tipPercentage = parseFloat(percentage.value)/100;
   const total = (billAmount * tipPercentage / split.value);
   const totalTip = Number(total).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-  let tipText = document.getElementById('tip-text');
   let text;
 
   if (split.value > 1) {
@@ -74,5 +75,5 @@ function calculateTip() {
   }
 
   tip.innerHTML = `<strong>${totalTip}</strong>`;
-  tipText.innerHTML = `${text}`
+  tipText.innerHTML = `${text}`;
 }
